@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>Chelsea FC — The Blues</title>
+  <meta name="description" content="The ultimate Chelsea FC fan page. History, squad, Drogba's legacy, stats, quiz and more."/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>"/>
+  <link rel="stylesheet" href="../styles/sport_page.css"/>
+</head>
+<body>
+
+
+<div id="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item">⚽ Chelsea FC <span>·</span> Founded 1905 <span>·</span> Stamford Bridge, London</span>
+    <span class="ticker-item">🏆 Premier League Champions <span>×6</span></span>
+    <span class="ticker-item">🏆 UEFA Champions League <span>2012 · 2021</span></span>
+    <span class="ticker-item">👑 Didier Drogba <span>—</span> Chelsea's Greatest Ever Striker</span>
+    <span class="ticker-item">🎽 The Blues <span>·</span> Royal Blue since 1912</span>
+    <span class="ticker-item">🏟 Stamford Bridge capacity <span>40,341</span></span>
+    <span class="ticker-item">⚽ Chelsea FC <span>·</span> Founded 1905 <span>·</span> Stamford Bridge, London</span>
+    <span class="ticker-item">🏆 Premier League Champions <span>×6</span></span>
+    <span class="ticker-item">🏆 UEFA Champions League <span>2012 · 2021</span></span>
+    <span class="ticker-item">👑 Didier Drogba <span>—</span> Chelsea's Greatest Ever Striker</span>
+    <span class="ticker-item">🎽 The Blues <span>·</span> Royal Blue since 1912</span>
+    <span class="ticker-item">🏟 Stamford Bridge capacity <span>40,341</span></span>
+  </div>
+</div>
+
+<!-- ═══ NAV ═══════════════════════════════════════════════ -->
+<nav id="nav" aria-label="Main navigation">
+  <div class="nav-brand">
+    <div class="nav-crest" aria-hidden="true">⚽</div>
+    <span class="nav-name">Chelsea <b>FC</b></span>
+  </div>
+
+  <ul class="nav-links" role="list">
+    <li><a href="#history">History</a></li>
+    <li><a href="#squad">Squad</a></li>
+    <li><a href="#legend">Legend</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#quiz">Quiz</a></li>
+  </ul>
+
+  <a href="../index.html" class="nav-home desktop-home" aria-label="Go to home page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+    Home
+  </a>
+
+  <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<ul id="mob-menu" role="menu" aria-label="Mobile navigation">
+  <button id="mob-close" aria-label="Close menu">✕</button>
+  <li><a href="#history">History</a></li>
+  <li><a href="#squad">Squad</a></li>
+  <li><a href="#legend">Legend</a></li>
+  <li><a href="#gallery">Gallery</a></li>
+  <li><a href="#quiz">Quiz</a></li>
+  <li>
+    <a href="../index.html" class="mob-home-btn" role="menuitem">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      Home
+    </a>
+  </li>
+</ul>
+
+<!-- ═══ HERO ═══════════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true">
+    <!--
+      HERO BACKGROUND IMAGE
+      File: images/sports/hero_stadium.jpg
+      Recommended: wide aerial or atmosphere shot of Stamford Bridge or Chelsea crowd
+    -->
+    <img class="hero-bg-img"
+         src="../images/sports/hero_stadium.jpg"
+         alt=""
+         aria-hidden="true"
+         onerror="this.style.display='none'">
+    <div class="hero-bg-fallback"></div>
+    <div class="hero-veil"></div>
+  </div>
+  <div id="particles" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Est. 1905 · Stamford Bridge · London</p>
+    <h1 class="hero-h1">
+      <span class="blue-line">CHELSEA</span>
+      <span class="gold-word">FC</span>
+    </h1>
+    <p class="hero-desc">
+      Five decades of heartbreak, triumph, and glory. From the King's Road
+      to the top of Europe — this is the story of The Blues.
+    </p>
+    <div class="hero-actions">
+      <a href="#legend" class="btn-gold">Reveal the Legend</a>
+      <a href="#quiz"   class="btn-outline">Take the Quiz</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-num">6</div>
+        <div class="hstat-label">Premier League Titles</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num">2</div>
+        <div class="hstat-label">Champions League Trophies</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num">8</div>
+        <div class="hstat-label">FA Cup Victories</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num">5</div>
+        <div class="hstat-label">League Cup Wins</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HONOURS BAND ══════════════════════════════════════ -->
+<div id="honours-band" aria-label="Trophy cabinet">
+  <div class="honour-item">
+    <div class="honour-count" data-target="6">0</div>
+    <div class="honour-name">Premier League</div>
+  </div>
+  <div class="honour-sep" aria-hidden="true"></div>
+  <div class="honour-item">
+    <div class="honour-count" data-target="2">0</div>
+    <div class="honour-name">Champions League</div>
+  </div>
+  <div class="honour-sep" aria-hidden="true"></div>
+  <div class="honour-item">
+    <div class="honour-count" data-target="8">0</div>
+    <div class="honour-name">FA Cup</div>
+  </div>
+  <div class="honour-sep" aria-hidden="true"></div>
+  <div class="honour-item">
+    <div class="honour-count" data-target="5">0</div>
+    <div class="honour-name">League Cup</div>
+  </div>
+  <div class="honour-sep" aria-hidden="true"></div>
+  <div class="honour-item">
+    <div class="honour-count" data-target="2">0</div>
+    <div class="honour-name">Europa League</div>
+  </div>
+  <div class="honour-sep" aria-hidden="true"></div>
+  <div class="honour-item">
+    <div class="honour-count" data-target="2">0</div>
+    <div class="honour-name">Club World Cup</div>
+  </div>
+  <div class="honour-sep" aria-hidden="true"></div>
+  <div class="honour-item">
+    <div class="honour-count" data-target="1">0</div>
+    <div class="honour-name">UEFA Super Cup</div>
+  </div>
+</div>
+
+<!-- ═══ HISTORY TIMELINE ══════════════════════════════════ -->
+<section id="history" class="sect sect-blue" aria-label="Club History">
+  <div class="sect-head anim">
+    <p class="sect-kicker">The Journey</p>
+    <h2 class="sect-h">A Century of <span class="g">Blue</span></h2>
+    <p class="sect-body">From a single founding meeting at the Rising Sun pub to the summit of world football.</p>
+  </div>
+
+  <div class="history-grid">
+    <!-- Timeline entries alternate left-right -->
+
+    <div class="hist-left anim">
+      <div class="hist-year">1905</div>
+      <h3 class="hist-title">The Birth of the Blues</h3>
+      <p class="hist-body">Chelsea Football Club is founded by Gus Mears at Stamford Bridge. The club joins the Football League in its very first season.</p>
+    </div>
+    <div class="history-line">
+      <div class="hist-dot" style="top:8px"></div>
+    </div>
+    <div class="hist-right"></div>
+
+    <div class="hist-left"></div>
+    <div class="history-line">
+      <div class="hist-dot" style="top:8px"></div>
+    </div>
+    <div class="hist-right anim anim-d1">
+      <div class="hist-year">1955</div>
+      <h3 class="hist-title">First League Title</h3>
+      <p class="hist-body">Under Ted Drake, Chelsea win their first and only league title for 50 years — the 1954–55 First Division Championship.</p>
+    </div>
+
+    <div class="hist-left anim anim-d2">
+      <div class="hist-year">1997</div>
+      <h3 class="hist-title">The Gullit Era & FA Cup Glory</h3>
+      <p class="hist-body">Ruud Gullit assembles a cosmopolitan squad and delivers the FA Cup, ending a 26-year trophy drought.</p>
+    </div>
+    <div class="history-line">
+      <div class="hist-dot" style="top:8px"></div>
+    </div>
+    <div class="hist-right"></div>
+
+    <div class="hist-left"></div>
+    <div class="history-line">
+      <div class="hist-dot" style="top:8px"></div>
+    </div>
+    <div class="hist-right anim anim-d1">
+      <div class="hist-year">2004</div>
+      <h3 class="hist-title">The Abramovich Revolution</h3>
+      <p class="hist-body">Roman Abramovich buys the club in 2003. José Mourinho arrives. The "Special One" era begins, ushering in back-to-back Premier League titles.</p>
+    </div>
+
+    <div class="hist-left anim anim-d2">
+      <div class="hist-year">2012</div>
+      <h3 class="hist-title">Champions of Europe</h3>
+      <p class="hist-body">Drogba's 88th-minute header, penalties in Munich — Chelsea win the Champions League for the first time. A night that will never be forgotten.</p>
+    </div>
+    <div class="history-line">
+      <div class="hist-dot" style="top:8px"></div>
+    </div>
+    <div class="hist-right"></div>
+
+    <div class="hist-left"></div>
+    <div class="history-line">
+      <div class="hist-dot" style="top:8px"></div>
+    </div>
+    <div class="hist-right anim anim-d1">
+      <div class="hist-year">2021</div>
+      <h3 class="hist-title">Back on Top of Europe</h3>
+      <p class="hist-body">Thomas Tuchel's Chelsea defeat Manchester City in Porto to win Chelsea's second Champions League title. Kai Havertz scores the only goal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SQUAD CARDS ═══════════════════════════════════════ -->
+<section id="squad" class="sect sect-pitch" aria-label="Chelsea Squad">
+  <div class="sect-head anim">
+    <p class="sect-kicker">The Blues</p>
+    <h2 class="sect-h">The <span class="g">Squad</span></h2>
+    <p class="sect-body">Scroll through some of Chelsea's most iconic and current players.</p>
+  </div>
+
+  <div class="squad-scroll" role="list" aria-label="Chelsea players">
+
+    <!-- Player 1 -->
+    <div class="player-card anim" role="listitem">
+      <div class="player-img-wrap">
+        <!--
+          FILE: images/sports/player_reece_james.jpg
+          Reece James — Chelsea captain / right back
+        -->
+        <img class="player-img"
+             src="../images/sports/player_reece_james.jpg"
+             alt="Reece James"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="player-img-placeholder" style="display:none">🧤</div>
+        <span class="player-pos-badge">DEF</span>
+        <span class="player-number">24</span>
+      </div>
+      <div class="player-body">
+        <div class="player-name">Reece James</div>
+        <div class="player-nation">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · Captain</div>
+        <div class="player-stats-row">
+          <div class="pstat"><div class="pstat-n">9</div><div class="pstat-l">Goals</div></div>
+          <div class="pstat"><div class="pstat-n">94</div><div class="pstat-l">Rating</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Player 2 -->
+    <div class="player-card anim anim-d1" role="listitem">
+      <div class="player-img-wrap">
+        <!--
+          FILE: images/sports/player_cole_palmer.jpg
+          Cole Palmer — midfielder / attacking
+        -->
+        <img class="player-img"
+             src="../images/sports/player_cole_palmer.jpg"
+             alt="Cole Palmer"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="player-img-placeholder" style="display:none">⚽</div>
+        <span class="player-pos-badge">MID</span>
+        <span class="player-number">20</span>
+      </div>
+      <div class="player-body">
+        <div class="player-name">Cole Palmer</div>
+        <div class="player-nation">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</div>
+        <div class="player-stats-row">
+          <div class="pstat"><div class="pstat-n">22</div><div class="pstat-l">Goals</div></div>
+          <div class="pstat"><div class="pstat-n">96</div><div class="pstat-l">Rating</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Player 3 -->
+    <div class="player-card anim anim-d2" role="listitem">
+      <div class="player-img-wrap">
+        <!--
+          FILE: images/sports/player_nicolas_jackson.jpg
+          Nicolas Jackson — striker
+        -->
+        <img class="player-img"
+             src="../images/sports/player_nicolas_jackson.jpg"
+             alt="Nicolas Jackson"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="player-img-placeholder" style="display:none">🎯</div>
+        <span class="player-pos-badge">FWD</span>
+        <span class="player-number">15</span>
+      </div>
+      <div class="player-body">
+        <div class="player-name">Nicolas Jackson</div>
+        <div class="player-nation">🇸🇳 Senegal</div>
+        <div class="player-stats-row">
+          <div class="pstat"><div class="pstat-n">17</div><div class="pstat-l">Goals</div></div>
+          <div class="pstat"><div class="pstat-n">88</div><div class="pstat-l">Rating</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Player 4 -->
+    <div class="player-card anim anim-d3" role="listitem">
+      <div class="player-img-wrap">
+        <!--
+          FILE: images/sports/player_enzo_fernandez.jpg
+          Enzo Fernández — midfielder / world cup winner
+        -->
+        <img class="player-img"
+             src="../images/sports/player_enzo_fernandez.jpg"
+             alt="Enzo Fernández"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="player-img-placeholder" style="display:none">🌟</div>
+        <span class="player-pos-badge">MID</span>
+        <span class="player-number">8</span>
+      </div>
+      <div class="player-body">
+        <div class="player-name">Enzo Fernández</div>
+        <div class="player-nation">🇦🇷 Argentina · WC Winner</div>
+        <div class="player-stats-row">
+          <div class="pstat"><div class="pstat-n">7</div><div class="pstat-l">Goals</div></div>
+          <div class="pstat"><div class="pstat-n">90</div><div class="pstat-l">Rating</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Player 5 -->
+    <div class="player-card anim anim-d4" role="listitem">
+      <div class="player-img-wrap">
+        <!--
+          FILE: images/sports/player_robert_sanchez.jpg
+          Robert Sánchez — goalkeeper
+        -->
+        <img class="player-img"
+             src="../images/sports/player_robert_sanchez.jpg"
+             alt="Robert Sánchez"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="player-img-placeholder" style="display:none">🧤</div>
+        <span class="player-pos-badge">GK</span>
+        <span class="player-number">1</span>
+      </div>
+      <div class="player-body">
+        <div class="player-name">Robert Sánchez</div>
+        <div class="player-nation">🇪🇸 Spain</div>
+        <div class="player-stats-row">
+          <div class="pstat"><div class="pstat-n">12</div><div class="pstat-l">Clean Sh.</div></div>
+          <div class="pstat"><div class="pstat-n">86</div><div class="pstat-l">Rating</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Player 6 — Legend -->
+    <div class="player-card anim anim-d4" role="listitem" style="border-color:rgba(255,215,0,.4)">
+      <div class="player-img-wrap">
+        <!--
+          FILE: images/sports/player_frank_lampard.jpg
+          Frank Lampard — Chelsea legend / all-time top scorer
+        -->
+        <img class="player-img"
+             src="../images/sports/player_frank_lampard.jpg"
+             alt="Frank Lampard"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="player-img-placeholder" style="display:none">👑</div>
+        <span class="player-pos-badge" style="background:var(--gold-dim)">LEGEND</span>
+        <span class="player-number">8</span>
+      </div>
+      <div class="player-body">
+        <div class="player-name">Frank Lampard</div>
+        <div class="player-nation">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England · All-time Top Scorer</div>
+        <div class="player-stats-row">
+          <div class="pstat"><div class="pstat-n">211</div><div class="pstat-l">Goals</div></div>
+          <div class="pstat"><div class="pstat-n">99</div><div class="pstat-l">Rating</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ STATS ══════════════════════════════════════════════ -->
+<section id="stats" class="sect sect-dark" aria-label="Club Statistics">
+  <div class="sect-head anim">
+    <p class="sect-kicker">By the Numbers</p>
+    <h2 class="sect-h">Chelsea <span class="g">By the Stats</span></h2>
+    <p class="sect-body">A breakdown of Chelsea's performance and legacy in hard numbers.</p>
+  </div>
+
+  <div class="stat-bars">
+    <div class="stat-bar-item anim">
+      <div class="sb-label"><span>Premier League Titles</span><span class="sb-val">6</span></div>
+      <div class="sb-track"><div class="sb-fill" style="--target-w:60%"></div></div>
+    </div>
+    <div class="stat-bar-item anim anim-d1">
+      <div class="sb-label"><span>Champions League Final Win Rate</span><span class="sb-val">100%</span></div>
+      <div class="sb-track"><div class="sb-fill" style="--target-w:100%"></div></div>
+    </div>
+    <div class="stat-bar-item anim anim-d2">
+      <div class="sb-label"><span>FA Cup Victories</span><span class="sb-val">8</span></div>
+      <div class="sb-track"><div class="sb-fill" style="--target-w:72%"></div></div>
+    </div>
+    <div class="stat-bar-item anim anim-d3">
+      <div class="sb-label"><span>Drogba Goals for Chelsea</span><span class="sb-val">164</span></div>
+      <div class="sb-track"><div class="sb-fill" style="--target-w:78%"></div></div>
+    </div>
+    <div class="stat-bar-item anim">
+      <div class="sb-label"><span>Lampard Goals (All-time Record)</span><span class="sb-val">211</span></div>
+      <div class="sb-track"><div class="sb-fill" style="--target-w:100%"></div></div>
+    </div>
+    <div class="stat-bar-item anim anim-d1">
+      <div class="sb-label"><span>Home Win Rate (5yr avg)</span><span class="sb-val">68%</span></div>
+      <div class="sb-track"><div class="sb-fill" style="--target-w:68%"></div></div>
+    </div>
+    <div class="stat-bar-item anim anim-d2">
+      <div class="sb-label"><span>Stamford Bridge Attendance</span><span class="sb-val">40,341</span></div>
+      <div class="sb-track"><div class="sb-fill" style="--target-w:85%"></div></div>
+    </div>
+    <div class="stat-bar-item anim anim-d3">
+      <div class="sb-label"><span>Years in Top Flight</span><span class="sb-val">119</span></div>
+      <div class="sb-track"><div class="sb-fill" style="--target-w:95%"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DROGBA LEGEND REVEAL ══════════════════════════════ -->
+<section id="legend" class="sect sect-pitch" aria-label="Chelsea Legend">
+  <div class="sect-head anim" style="text-align:center; margin-bottom:28px">
+    <p class="sect-kicker" style="justify-content:center">Sealed in History</p>
+    <h2 class="sect-h" style="text-align:center">Reveal a System <span class="g">Legend</span></h2>
+    <p class="sect-body" style="margin:14px auto 0; text-align:center">
+      One player above all others defined Chelsea's greatest era. Are you ready to reveal them?
+    </p>
+  </div>
+
+  <!-- Lock / pre-reveal -->
+  <div id="legend-pre">
+    <button class="legend-lock-btn" id="legend-lock-btn" aria-label="Click to reveal Chelsea's system legend">
+      <div class="lock-icon" aria-hidden="true">
+        🔒
+        <span class="lock-pulse"></span>
+        <span class="lock-pulse-2"></span>
+      </div>
+      <span class="lock-prompt-text">CLICK TO REVEAL</span>
+      <span class="lock-sub">Chelsea's greatest system legend awaits…</span>
+    </button>
+  </div>
+
+  <!-- Drogba reveal (hidden until unlocked) -->
+  <div id="drogba-reveal">
+    <div class="drogba-panel">
+
+      <!-- Image column -->
+      <div class="drogba-img-col" aria-label="Didier Drogba photo">
+        <!--
+          FILE: images/sports/drogba_main.jpg
+          Didier Drogba — full portrait or celebrating. Best: a high-quality
+          action shot or celebration image against a crowd background.
+          Also see IMAGE_MANIFEST.txt for full details.
+        -->
+        <img class="drogba-img" src="../images/sports/drogba_main.jpg" alt="Didier Drogba — Chelsea's greatest legend" onerror="this.style.display='none'">
+        <div class="drogba-img-placeholder" aria-hidden="true">🦁</div>
+        <div class="spotlight" aria-hidden="true"></div>
+        <div class="drogba-num-bg" aria-hidden="true">11</div>
+      </div>
+
+      <!-- Info column -->
+      <div class="drogba-info">
+        <span class="legend-badge">⭐ System Legend · Club Icon</span>
+
+        <h2 class="drogba-name">DIDIER<br>DROGBA</h2>
+        <p class="drogba-full">Didier Yves Drogba Tébily</p>
+        <p class="drogba-desc">
+          Born in Abidjan, Ivory Coast, Drogba is widely regarded as the greatest
+          player in Chelsea's history. A physical force, a big-game player, and a man
+          who saved his best for the moments that mattered most. His last-minute header
+          in the 2012 Champions League final in Munich remains one of football's most
+          iconic moments.
+        </p>
+
+        <div class="drogba-stats">
+          <div class="dstat">
+            <div class="dstat-n" data-target="164">0</div>
+            <div class="dstat-l">Chelsea Goals</div>
+          </div>
+          <div class="dstat">
+            <div class="dstat-n" data-target="381">0</div>
+            <div class="dstat-l">Appearances</div>
+          </div>
+          <div class="dstat">
+            <div class="dstat-n" data-target="4">0</div>
+            <div class="dstat-l">FA Cups</div>
+          </div>
+        </div>
+
+        <blockquote class="drogba-quote">
+          "I always said that if I had to choose one player to score a goal with my life
+          depending on it, I would choose Didier Drogba."
+          <cite>— José Mourinho, Chelsea Manager</cite>
+        </blockquote>
+
+        <div class="drogba-trophies">
+          <span class="trophy-tag">🏆 Premier League ×4</span>
+          <span class="trophy-tag">🏆 Champions League 2012</span>
+          <span class="trophy-tag">🏆 FA Cup ×4</span>
+          <span class="trophy-tag">🏆 League Cup ×3</span>
+          <span class="trophy-tag">🥇 PFA Players' Player 2012</span>
+          <span class="trophy-tag">⚽ Africa's Best Player ×2</span>
+        </div>
+      </div>
+
+    </div><!-- /drogba-panel -->
+  </div><!-- /drogba-reveal -->
+</section>
+
+<!-- ═══ GALLERY ════════════════════════════════════════════ -->
+<section id="gallery" class="sect sect-dark" aria-label="Chelsea Photo Gallery">
+  <div class="sect-head anim">
+    <p class="sect-kicker">The Gallery</p>
+    <h2 class="sect-h">Moments in <span class="g">Blue</span></h2>
+    <p class="sect-body">Click any image to view it full screen. Add your own photos by following the image manifest.</p>
+  </div>
+
+  <div class="gallery-grid">
+
+    <!-- Slot 1 — large feature image -->
+    <div class="gal-item anim"
+         data-lb-src="../images/sports/gallery_stamford_bridge.jpg"
+         data-lb-cap="Stamford Bridge — Home of Chelsea FC"
+         aria-label="Stamford Bridge stadium photo">
+      <!--
+        FILE: images/sports/gallery_stamford_bridge.jpg
+        Best: Wide shot of Stamford Bridge stadium, day or night
+      -->
+      <img class="gal-img" src="../images/sports/gallery_stamford_bridge.jpg"
+           alt="Stamford Bridge" onerror="this.style.display='none'">
+      <div class="gal-ph" aria-hidden="true">🏟</div>
+      <div class="gal-overlay"><span class="gal-cap">Stamford Bridge</span></div>
+    </div>
+
+    <!-- Slot 2 -->
+    <div class="gal-item anim anim-d1"
+         data-lb-src="../images/sports/gallery_cl_trophy.jpg"
+         data-lb-cap="Chelsea lifting the Champions League 2012"
+         aria-label="Chelsea Champions League 2012">
+      <!--
+        FILE: images/sports/gallery_cl_trophy.jpg
+        Best: Chelsea players celebrating with the CL trophy, Munich 2012
+      -->
+      <img class="gal-img" src="../images/sports/gallery_cl_trophy.jpg"
+           alt="Champions League 2012" onerror="this.style.display='none'">
+      <div class="gal-ph" aria-hidden="true">🏆</div>
+      <div class="gal-overlay"><span class="gal-cap">Champions League 2012</span></div>
+    </div>
+
+    <!-- Slot 3 -->
+    <div class="gal-item anim anim-d2"
+         data-lb-src="../images/sports/gallery_fans.jpg"
+         data-lb-cap="The Blue faithful at Stamford Bridge"
+         aria-label="Chelsea fans">
+      <!--
+        FILE: images/sports/gallery_fans.jpg
+        Best: Chelsea supporters in full voice, blue scarves, Shed End
+      -->
+      <img class="gal-img" src="../images/sports/gallery_fans.jpg"
+           alt="Chelsea Fans" onerror="this.style.display='none'">
+      <div class="gal-ph" aria-hidden="true">👥</div>
+      <div class="gal-overlay"><span class="gal-cap">The Blue Faithful</span></div>
+    </div>
+
+    <!-- Slot 4 -->
+    <div class="gal-item anim anim-d1"
+         data-lb-src="../images/sports/gallery_drogba_celebrate.jpg"
+         data-lb-cap="Drogba celebrating — the iconic fist pump"
+         aria-label="Drogba celebrating">
+      <!--
+        FILE: images/sports/gallery_drogba_celebrate.jpg
+        Best: Drogba with arms spread or fist pump celebration, Chelsea shirt
+      -->
+      <img class="gal-img" src="../images/sports/gallery_drogba_celebrate.jpg"
+           alt="Drogba Celebrating" onerror="this.style.display='none'">
+      <div class="gal-ph" aria-hidden="true">🙌</div>
+      <div class="gal-overlay"><span class="gal-cap">Drogba — The Celebration</span></div>
+    </div>
+
+    <!-- Slot 5 -->
+    <div class="gal-item anim anim-d2"
+         data-lb-src="../images/sports/gallery_training.jpg"
+         data-lb-cap="Chelsea training at Cobham"
+         aria-label="Chelsea training">
+      <!--
+        FILE: images/sports/gallery_training.jpg
+        Best: Chelsea players training at Cobham training ground
+      -->
+      <img class="gal-img" src="../images/sports/gallery_training.jpg"
+           alt="Chelsea Training" onerror="this.style.display='none'">
+      <div class="gal-ph" aria-hidden="true">🏋</div>
+      <div class="gal-overlay"><span class="gal-cap">Cobham Training Ground</span></div>
+    </div>
+
+    <!-- Slot 6 -->
+    <div class="gal-item anim anim-d3"
+         data-lb-src="../images/sports/gallery_kit_home.jpg"
+         data-lb-cap="Chelsea home kit — Royal Blue"
+         aria-label="Chelsea home kit">
+      <!--
+        FILE: images/sports/gallery_kit_home.jpg
+        Best: Chelsea players wearing the iconic Royal Blue home shirt
+      -->
+      <img class="gal-img" src="../images/sports/gallery_kit_home.jpg"
+           alt="Chelsea Home Kit" onerror="this.style.display='none'">
+      <div class="gal-ph" aria-hidden="true">👕</div>
+      <div class="gal-overlay"><span class="gal-cap">The Royal Blue</span></div>
+    </div>
+
+    <!-- Slot 7 -->
+    <div class="gal-item anim"
+         data-lb-src="../images/sports/gallery_lampard_action.jpg"
+         data-lb-cap="Frank Lampard — Chelsea's all-time top scorer"
+         aria-label="Frank Lampard in action">
+      <!--
+        FILE: images/sports/gallery_lampard_action.jpg
+        Best: Lampard striking a shot or running at full pace in Chelsea blue
+      -->
+      <img class="gal-img" src="../images/sports/gallery_lampard_action.jpg"
+           alt="Frank Lampard" onerror="this.style.display='none'">
+      <div class="gal-ph" aria-hidden="true">⚡</div>
+      <div class="gal-overlay"><span class="gal-cap">Lampard — 211 Goals</span></div>
+    </div>
+
+    <!-- Slot 8 -->
+    <div class="gal-item anim anim-d1"
+         data-lb-src="../images/sports/gallery_chelsea_crest.jpg"
+         data-lb-cap="Chelsea FC — The Blues crest"
+         aria-label="Chelsea FC crest">
+      <!--
+        FILE: images/sports/gallery_chelsea_crest.jpg
+        Best: High-res Chelsea badge/crest on matchday shirt or stadium wall
+      -->
+      <img class="gal-img" src="../images/sports/gallery_chelsea_crest.jpg"
+           alt="Chelsea Crest" onerror="this.style.display='none'">
+      <div class="gal-ph" aria-hidden="true">🛡</div>
+      <div class="gal-overlay"><span class="gal-cap">The Chelsea Crest</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ QUIZ ══════════════════════════════════════════════ -->
+<section id="quiz" class="sect sect-blue" aria-label="Chelsea Quiz">
+  <div class="sect-head anim" style="text-align:center">
+    <p class="sect-kicker" style="justify-content:center">Test Yourself</p>
+    <h2 class="sect-h" style="text-align:center">How Blue Are <span class="g">You?</span></h2>
+    <p class="sect-body" style="margin:14px auto 0; text-align:center">
+      8 questions. Can you prove you're a true Blue?
+    </p>
+  </div>
+
+  <div class="quiz-box anim anim-d1">
+    <div class="quiz-progress-bar" aria-label="Quiz progress">
+      <div class="quiz-progress-fill" id="quiz-progress-fill" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <p class="quiz-q-num" id="quiz-q-num"></p>
+    <h3 class="quiz-question" id="quiz-question"></h3>
+    <div class="quiz-options" id="quiz-options" role="group" aria-label="Answer options"></div>
+    <p class="quiz-feedback" id="quiz-feedback" aria-live="polite"></p>
+    <button class="quiz-next" id="quiz-next">Next Question</button>
+
+    <!-- Result screen (hidden initially) -->
+    <div class="quiz-result" id="quiz-result" aria-live="polite">
+      <div class="result-score" id="result-score">0/8</div>
+      <p class="result-label" id="result-label"></p>
+      <p class="result-msg"   id="result-msg"></p>
+      <button class="quiz-restart" id="quiz-restart">Try Again</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LIGHTBOX ══════════════════════════════════════════ -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button id="lb-close" aria-label="Close image viewer">✕</button>
+  <img id="lb-img" src="" alt="Enlarged gallery image"/>
+  <p id="lb-cap"></p>
+</div>
+
+<!-- ═══ TOAST ════════════════════════════════════════════= -->
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════ -->
+<footer id="footer" role="contentinfo">
+  <div>
+    <p class="footer-brand">Chelsea <b>FC</b></p>
+    <p class="footer-tagline">Keep the Blue Flag Flying High.</p>
+  </div>
+  <a href="../index.html" class="footer-home" aria-label="Go to home page">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+    Home
+  </a>
+  <p class="footer-copy">
+    Fan page — not affiliated with Chelsea FC Ltd.<br>
+    All club trademarks belong to their respective owners.
+  </p>
+</footer>
+
+<script src="../scripts/sport_page.js"></script>
+</body>
+</html>

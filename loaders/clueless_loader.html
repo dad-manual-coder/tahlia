@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loading Clueless Wardrobe</title>
+    <link rel="icon" href="../images/svg/mark.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Comic+Neue:wght@700&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/home/clueless-loader.css" />
+  </head>
+  <body>
+    <div class="crt">
+      <div class="window">
+        <div class="titlebar">
+          <span>TAHLIA.EXE</span>
+          <span>x</span>
+        </div>
+        <div class="body">
+          <h1>Clueless Wardrobe</h1>
+          <div class="plaid"></div>
+          <div class="log" id="log">boot> accessing closet.db<span class="blink">_</span></div>
+          <div class="bar"><span id="bar"></span></div>
+        </div>
+      </div>
+    </div>
+    <button class="skip" id="skip" type="button">Skip</button>
+    <script type="module">
+      import { runPortal } from "../scripts/home/portal.js";
+      const lines = [
+        "boot> accessing closet.db",
+        "boot> yellow plaid: FOUND",
+        "boot> knee socks: MATCHED",
+        "boot> as if... compiling looks",
+        "boot> wardrobe online",
+      ];
+      const log = document.getElementById("log");
+      let i = 0;
+      const timer = setInterval(() => {
+        i += 1;
+        if (i >= lines.length) {
+          clearInterval(timer);
+          return;
+        }
+        log.innerHTML = lines.slice(0, i + 1).join("\n") + '<span class="blink">_</span>';
+      }, 700);
+      runPortal({ target: "../pages/clueless_wardrobe.html", duration: 4800 });
+    </script>
+  </body>
+</html>

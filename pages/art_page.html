@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>Artisan — A Gallery for the Devoted</title>
+  <meta name="description" content="A curated space for art lovers. Explore centuries of masterworks, art movements, and build your own private collection."/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>"/>
+
+  <!-- Active theme (swapped by JS; dark is default) -->
+  <link id="theme-link" rel="stylesheet" href="../styles/art_page/dark.css"/>
+  <!-- Base styles always last so theme vars are available -->
+  <link rel="stylesheet" href="../styles/art_page/base.css"/>
+
+  <!-- Scroll-reveal helper -->
+  <style>
+    .anim{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+    .anim.vis{opacity:1;transform:none}
+    .anim-d1{transition-delay:.1s}.anim-d2{transition-delay:.2s}.anim-d3{transition-delay:.3s}
+    .anim-d4{transition-delay:.4s}.anim-d5{transition-delay:.5s}
+    /* Theme button shared across nav & mobile */
+    #theme-bar,.mob-theme-bar{display:flex;align-items:center;gap:6px}
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     WELCOME SCREEN
+══════════════════════════════════════════════════════════ -->
+<div id="welcome-screen" role="dialog" aria-modal="true" aria-label="Welcome">
+  <div class="w-inner">
+    <span class="w-stroke" aria-hidden="true"></span>
+    <h1 class="w-title">Step inside<br><i>Artisan</i></h1>
+    <p class="w-sub">
+      A sanctuary for those who feel more than words can hold.<br>
+      Masterworks, movements, and a private corner for your own art.
+    </p>
+    <span class="w-label" id="name-lbl">What shall we call you?</span>
+    <div class="w-row">
+      <input id="w-input" class="w-input" type="text"
+             placeholder="Your name or nickname…"
+             maxlength="40" autocomplete="off" spellcheck="false"
+             aria-labelledby="name-lbl"/>
+      <button id="w-enter" class="w-enter">Enter Gallery</button>
+    </div>
+    <button id="w-skip" class="w-skip">Skip — browse anonymously</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════════ -->
+<nav id="nav" aria-label="Main navigation">
+  <a href="#hero" class="nav-brand">Arti<b>san</b></a>
+
+  <ul class="nav-links">
+    <li><a href="#masterworks">Masterworks</a></li>
+    <li><a href="#movements">Movements</a></li>
+    <li><a href="#timeline">History</a></li>
+    <li><a href="#collection">My Collection</a></li>
+  </ul>
+
+  <!-- Theme dots — desktop -->
+  <div id="theme-bar" class="theme-bar-desktop" role="group" aria-label="Choose colour theme">
+    <button class="theme-btn on" data-theme="dark"  title="Dark Classic"      aria-label="Dark theme"></button>
+    <button class="theme-btn"    data-theme="light"  title="Parchment Light"   aria-label="Light theme"></button>
+    <button class="theme-btn"    data-theme="pink"   title="Rose &amp; Plum"   aria-label="Pink theme"></button>
+    <button class="theme-btn"    data-theme="mix"    title="Festival Mix"      aria-label="Mix theme"></button>
+  </div>
+
+  <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile fullscreen menu -->
+<ul id="mob-menu" role="menu" aria-label="Mobile navigation">
+  <button id="mob-close" aria-label="Close menu">✕</button>
+  <li><a href="#masterworks">Masterworks</a></li>
+  <li><a href="#movements">Movements</a></li>
+  <li><a href="#timeline">History</a></li>
+  <li><a href="#collection">My Collection</a></li>
+  <!-- Theme dots — mobile -->
+  <li>
+    <div class="mob-theme-bar" role="group" aria-label="Colour theme" style="gap:12px;justify-content:center;margin-top:8px">
+      <button class="theme-btn on" data-mob-theme="dark"  title="Dark"   aria-label="Dark theme"></button>
+      <button class="theme-btn"    data-mob-theme="light"  title="Light"  aria-label="Light theme"></button>
+      <button class="theme-btn"    data-mob-theme="pink"   title="Pink"   aria-label="Pink theme"></button>
+      <button class="theme-btn"    data-mob-theme="mix"    title="Mix"    aria-label="Mix theme"></button>
+    </div>
+  </li>
+</ul>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Welcome hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <div class="hero-left">
+    <p class="hero-tag">The Gallery is Open</p>
+    <h2 class="hero-h1">
+      Art is not
+      what you see —
+      <em>it's what you make others feel.</em>
+    </h2>
+    <p class="hero-body">
+      From the smoky studios of the Renaissance to the electric canvases
+      of today — Artisan holds the works that changed everything,
+      and a private space for the art that changes <em>you</em>.
+    </p>
+    <div class="hero-actions">
+      <a href="#masterworks" class="btn-pri">Explore Masterworks</a>
+      <a href="#collection"  class="btn-sec">Open My Collection</a>
+    </div>
+  </div>
+
+  <!-- Stacked floating frames -->
+  <div class="hero-right" aria-hidden="true">
+    <div class="frame f1">
+      <img class="frame-img"
+           src="../images/art_section/starry_night.jpg"
+           alt="The Starry Night"
+           onerror="this.outerHTML='<div class=\'frame-img ph-1\'><span style=\'color:rgba(255,255,255,.3);font-family:serif;font-style:italic;font-size:.9rem;padding:16px;text-align:center\'>The Starry Night<br>Van Gogh · 1889</span></div>'">
+    </div>
+    <div class="frame f2">
+      <img class="frame-img"
+           src="../images/art_section/girl_pearl_earring.jpg"
+           alt="Girl with a Pearl Earring"
+           onerror="this.outerHTML='<div class=\'frame-img ph-2\'><span style=\'color:rgba(255,255,255,.3);font-family:serif;font-style:italic;font-size:.85rem;padding:14px;text-align:center\'>Girl with a Pearl Earring<br>Vermeer · 1665</span></div>'">
+    </div>
+    <div class="frame f3">
+      <img class="frame-img"
+           src="../images/art_section/great_wave.jpg"
+           alt="The Great Wave"
+           onerror="this.outerHTML='<div class=\'frame-img ph-4\'><span style=\'color:rgba(255,255,255,.3);font-family:serif;font-style:italic;font-size:.82rem;padding:12px;text-align:center\'>The Great Wave<br>Hokusai · 1831</span></div>'">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     MASTERWORKS
+══════════════════════════════════════════════════════════ -->
+<section id="masterworks" class="sect sect-alt" aria-label="Masterworks gallery">
+  <div class="sect-header anim">
+    <p class="sect-kicker">Masterworks</p>
+    <h2 class="sect-h">Works that <em>changed everything</em></h2>
+    <p class="sect-body">
+      Six paintings that shook the world. Click any to view it full-screen.
+    </p>
+  </div>
+
+  <div class="mw-grid">
+
+    <!-- 1 — large -->
+    <article class="mw-card anim" tabindex="0" aria-label="The Starry Night">
+      <img class="mw-img" src="../images/art_section/starry_night.jpg" alt="The Starry Night — Van Gogh"
+           onerror="this.className='mw-img ph-1';this.src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='">
+      <div class="mw-ph ph-1" style="display:none"></div>
+      <div class="mw-veil">
+        <p class="mw-artist">Vincent van Gogh</p>
+        <h3 class="mw-title">The Starry Night</h3>
+        <p class="mw-year">1889 · Post-Impressionism · MoMA, New York</p>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="mw-card anim anim-d1" tabindex="0" aria-label="Girl with a Pearl Earring">
+      <img class="mw-img" src="../images/art_section/girl_pearl_earring.jpg" alt="Girl with a Pearl Earring — Vermeer"
+           onerror="this.className='mw-img ph-2';this.src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='">
+      <div class="mw-veil">
+        <p class="mw-artist">Johannes Vermeer</p>
+        <h3 class="mw-title">Girl with a Pearl Earring</h3>
+        <p class="mw-year">1665 · Dutch Golden Age · Mauritshuis, The Hague</p>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="mw-card anim anim-d2" tabindex="0" aria-label="The Persistence of Memory">
+      <img class="mw-img" src="../images/art_section/persistence_of_memory.jpg" alt="The Persistence of Memory — Dalí"
+           onerror="this.className='mw-img ph-3';this.src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='">
+      <div class="mw-veil">
+        <p class="mw-artist">Salvador Dalí</p>
+        <h3 class="mw-title">The Persistence of Memory</h3>
+        <p class="mw-year">1931 · Surrealism · MoMA, New York</p>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="mw-card anim anim-d1" tabindex="0" aria-label="The Great Wave">
+      <img class="mw-img" src="../images/art_section/great_wave.jpg" alt="The Great Wave off Kanagawa — Hokusai"
+           onerror="this.className='mw-img ph-4';this.src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='">
+      <div class="mw-veil">
+        <p class="mw-artist">Katsushika Hokusai</p>
+        <h3 class="mw-title">The Great Wave off Kanagawa</h3>
+        <p class="mw-year">c.1831 · Ukiyo-e · Metropolitan Museum, New York</p>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="mw-card anim anim-d2" tabindex="0" aria-label="Mona Lisa">
+      <img class="mw-img" src="../images/art_section/mona_lisa.jpg" alt="Mona Lisa — Leonardo da Vinci"
+           onerror="this.className='mw-img ph-5';this.src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='">
+      <div class="mw-veil">
+        <p class="mw-artist">Leonardo da Vinci</p>
+        <h3 class="mw-title">Mona Lisa</h3>
+        <p class="mw-year">c.1503–1519 · Renaissance · Louvre, Paris</p>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="mw-card anim anim-d3" tabindex="0" aria-label="The Scream">
+      <img class="mw-img" src="../images/art_section/the_scream.jpg" alt="The Scream — Edvard Munch"
+           onerror="this.className='mw-img ph-6';this.src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='">
+      <div class="mw-veil">
+        <p class="mw-artist">Edvard Munch</p>
+        <h3 class="mw-title">The Scream</h3>
+        <p class="mw-year">1893 · Expressionism · National Museum, Oslo</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     QUOTE BAND 1
+══════════════════════════════════════════════════════════ -->
+<div class="quote-band" aria-label="Quote">
+  <blockquote class="quote-text anim">
+    "Every artist dips his brush in his own soul, and paints his own nature into his pictures."
+  </blockquote>
+  <p class="quote-attr anim anim-d1">— Henry Ward Beecher</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     ART MOVEMENTS
+══════════════════════════════════════════════════════════ -->
+<section id="movements" class="sect" aria-label="Art Movements">
+  <div class="sect-header anim">
+    <p class="sect-kicker">Movements</p>
+    <h2 class="sect-h">The currents that <em>shaped history</em></h2>
+    <p class="sect-body">
+      Every revolution in art began with a refusal to accept what came before.
+      Filter by movement to explore the ideas that shifted everything.
+    </p>
+  </div>
+
+  <div class="pills" role="group" aria-label="Filter by movement">
+    <button class="pill on" data-mv="all">All</button>
+    <button class="pill" data-mv="renaissance">Renaissance</button>
+    <button class="pill" data-mv="baroque">Baroque</button>
+    <button class="pill" data-mv="impressionism">Impressionism</button>
+    <button class="pill" data-mv="surrealism">Surrealism</button>
+    <button class="pill" data-mv="modernism">Modernism</button>
+    <button class="pill" data-mv="abstract">Abstract</button>
+    <button class="pill" data-mv="contemporary">Contemporary</button>
+  </div>
+
+  <div class="mv-grid">
+
+    <article class="mv-card anim" data-mv="renaissance">
+      <img class="mv-img" src="../images/art_section/renaissance_sample.jpg" alt="Renaissance art"
+           onerror="this.style.cssText='height:190px;display:block;background:linear-gradient(135deg,#2a1f14,#9a7a5a)'">
+      <div class="mv-body">
+        <h3 class="mv-name">Renaissance</h3>
+        <p class="mv-desc">A rebirth of classical ideals. Harmony, proportion, and the dignity of the human form — Da Vinci, Michelangelo, Raphael.</p>
+        <span class="mv-era">14th – 17th Century</span>
+      </div>
+    </article>
+
+    <article class="mv-card anim anim-d1" data-mv="baroque">
+      <img class="mv-img" src="../images/art_section/baroque_sample.jpg" alt="Baroque art"
+           onerror="this.style.cssText='height:190px;display:block;background:linear-gradient(135deg,#1a0a00,#7a4a1a)'">
+      <div class="mv-body">
+        <h3 class="mv-name">Baroque</h3>
+        <p class="mv-desc">Theatricality, grandeur, chiaroscuro. Caravaggio's violence of light; Rembrandt's tender shadows.</p>
+        <span class="mv-era">17th – 18th Century</span>
+      </div>
+    </article>
+
+    <article class="mv-card anim anim-d2" data-mv="impressionism">
+      <img class="mv-img" src="../images/art_section/impressionism_sample.jpg" alt="Impressionism"
+           onerror="this.style.cssText='height:190px;display:block;background:linear-gradient(135deg,#1a2a3a,#4a8a9a)'">
+      <div class="mv-body">
+        <h3 class="mv-name">Impressionism</h3>
+        <p class="mv-desc">Not what the eye sees — but what light does to it. Monet, Renoir, and Degas broke from the rigid academy.</p>
+        <span class="mv-era">19th Century</span>
+      </div>
+    </article>
+
+    <article class="mv-card anim anim-d3" data-mv="surrealism">
+      <img class="mv-img" src="../images/art_section/surrealism_sample.jpg" alt="Surrealism"
+           onerror="this.style.cssText='height:190px;display:block;background:linear-gradient(135deg,#0a1a2a,#6a3a1a)'">
+      <div class="mv-body">
+        <h3 class="mv-name">Surrealism</h3>
+        <p class="mv-desc">Where the unconscious becomes the canvas. Dalí, Magritte, and Ernst painted the iron logic of dreams.</p>
+        <span class="mv-era">1920s – 1950s</span>
+      </div>
+    </article>
+
+    <article class="mv-card anim" data-mv="modernism">
+      <img class="mv-img" src="../images/art_section/modernism_sample.jpg" alt="Modernism"
+           onerror="this.style.cssText='height:190px;display:block;background:linear-gradient(135deg,#1a1a2a,#5a5a8a)'">
+      <div class="mv-body">
+        <h3 class="mv-name">Modernism</h3>
+        <p class="mv-desc">Picasso shattered perspective. Matisse dissolved it in colour. Art became an argument about what art could be.</p>
+        <span class="mv-era">Early 20th Century</span>
+      </div>
+    </article>
+
+    <article class="mv-card anim anim-d1" data-mv="abstract">
+      <img class="mv-img" src="../images/art_section/abstract_sample.jpg" alt="Abstract Expressionism"
+           onerror="this.style.cssText='height:190px;display:block;background:linear-gradient(135deg,#1a0a0a,#8a1a1a,#d44a0a)'">
+      <div class="mv-body">
+        <h3 class="mv-name">Abstract Expressionism</h3>
+        <p class="mv-desc">Pollock's drips, Rothko's fields of saturated grief. Pure emotion with no need for recognisable form.</p>
+        <span class="mv-era">1940s – 1960s</span>
+      </div>
+    </article>
+
+    <article class="mv-card anim anim-d2" data-mv="contemporary">
+      <img class="mv-img" src="../images/art_section/contemporary_sample.jpg" alt="Contemporary art"
+           onerror="this.style.cssText='height:190px;display:block;background:linear-gradient(135deg,#0a0a1a,#2a4a6a,#4aaa8a)'">
+      <div class="mv-body">
+        <h3 class="mv-name">Contemporary</h3>
+        <p class="mv-desc">No rules — only questions. Identity, politics, and technology as medium. The conversation is louder than ever.</p>
+        <span class="mv-era">1970s – Present</span>
+      </div>
+    </article>
+
+    <article class="mv-card anim anim-d3" data-mv="impressionism">
+      <img class="mv-img" src="../images/art_section/postimpressionism_sample.jpg" alt="Post-Impressionism"
+           onerror="this.style.cssText='height:190px;display:block;background:linear-gradient(135deg,#1a2a0a,#5a8a2a,#d4a020)'">
+      <div class="mv-body">
+        <h3 class="mv-name">Post-Impressionism</h3>
+        <p class="mv-desc">Van Gogh, Gauguin, Seurat — each took Impressionism's loosened hand and drove it somewhere deeply personal.</p>
+        <span class="mv-era">Late 19th Century</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     TIMELINE
+══════════════════════════════════════════════════════════ -->
+<section id="timeline" class="sect sect-alt" aria-label="Art History Timeline">
+  <div class="sect-header anim">
+    <p class="sect-kicker">History</p>
+    <h2 class="sect-h">A thread through <em>time</em></h2>
+    <p class="sect-body">From cave walls to digital canvases — humanity has always needed to mark its moment.</p>
+  </div>
+
+  <div class="tl" role="list">
+    <div class="tl-item anim" role="listitem">
+      <p class="tl-era">40,000 BCE</p>
+      <h3 class="tl-name">Cave Art &amp; Prehistoric Expression</h3>
+      <p class="tl-desc">The first artists pressed ochre-stained hands against limestone at Chauvet and Altamira — not decoration, but testimony: <em>we were here, we saw, we felt</em>.</p>
+    </div>
+    <div class="tl-item anim anim-d1" role="listitem">
+      <p class="tl-era">1300s – 1600s</p>
+      <h3 class="tl-name">The Renaissance</h3>
+      <p class="tl-desc">Italy rediscovered the classical world and married it to Christian devotion. Perspective was invented. The human body became sacred subject matter. Genius became a category.</p>
+    </div>
+    <div class="tl-item anim anim-d2" role="listitem">
+      <p class="tl-era">1600s – 1700s</p>
+      <h3 class="tl-name">Baroque &amp; the Age of Drama</h3>
+      <p class="tl-desc">Caravaggio painted saints as peasants, lit from within by a terrifying grace. Art became theatre — shadow was as important as light.</p>
+    </div>
+    <div class="tl-item anim anim-d1" role="listitem">
+      <p class="tl-era">1860s – 1900s</p>
+      <h3 class="tl-name">Impressionism &amp; Its Aftermath</h3>
+      <p class="tl-desc">Rejected by the official Salon, Monet and his circle painted out of doors. They captured light as sensation rather than fact. The art world was never the same.</p>
+    </div>
+    <div class="tl-item anim anim-d2" role="listitem">
+      <p class="tl-era">1900s – 1940s</p>
+      <h3 class="tl-name">Modernism: The Great Rupture</h3>
+      <p class="tl-desc">Cubism, Futurism, Dada, Surrealism — each declared that old forms were not just outdated but complicit. Art became an argument about itself.</p>
+    </div>
+    <div class="tl-item anim anim-d1" role="listitem">
+      <p class="tl-era">1940s – 1970s</p>
+      <h3 class="tl-name">Abstract Expressionism &amp; Pop</h3>
+      <p class="tl-desc">New York inherited Paris's mantle. Pollock dripped, Warhol screened, Rothko glowed. The gallery became a place of almost religious experience.</p>
+    </div>
+    <div class="tl-item anim anim-d2" role="listitem">
+      <p class="tl-era">1970s – Now</p>
+      <h3 class="tl-name">Contemporary: Everything Is the Canvas</h3>
+      <p class="tl-desc">Identity, politics, technology, trauma — nothing is off-limits. Street art claims public space. Digital art challenges ownership. The conversation is global.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     QUOTE BAND 2
+══════════════════════════════════════════════════════════ -->
+<div class="quote-band" style="--accent:var(--accent2)" aria-label="Quote">
+  <blockquote class="quote-text anim">
+    "The purpose of art is washing the dust of daily life off our souls."
+  </blockquote>
+  <p class="quote-attr anim anim-d1">— Pablo Picasso</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     TAHLIA'S COLLECTION
+══════════════════════════════════════════════════════════ -->
+<section id="collection" class="sect" aria-label="Personal art collection">
+
+  <div class="coll-topbar">
+    <div class="coll-name-wrap">
+      <!-- click to rename -->
+      <h2 class="coll-name js-coll-name" id="coll-name-display" tabindex="0"
+          role="button" aria-label="Click to rename your collection">
+        Tahlia's Collection
+        <span class="edit-icon" aria-hidden="true">✏</span>
+      </h2>
+      <!-- rename form (hidden by default) -->
+      <form id="coll-rename-form" aria-label="Rename collection" onsubmit="return false">
+        <input id="coll-rename-input" type="text" maxlength="50"
+               placeholder="New collection name…" aria-label="Collection name"/>
+        <button type="button" id="coll-rename-save" class="btn-rename-save">Save</button>
+      </form>
+      <p class="sect-body" style="margin-top:8px">
+        Your private gallery — stored only on this device, visible only to you.
+      </p>
+    </div>
+
+    <div class="coll-actions">
+      <button id="btn-upload-art" class="btn-upload-art" aria-label="Upload artwork">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        Upload Photo
+      </button>
+      <button id="btn-open-draw" class="btn-draw-open" aria-label="Open drawing studio">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>
+        Draw
+      </button>
+    </div>
+  </div>
+
+  <!-- Hidden file input -->
+  <input type="file" id="file-input" accept="image/*" multiple aria-label="Select image files"/>
+
+  <!-- Drop zone -->
+  <div id="drop-zone" role="button" tabindex="0" aria-label="Upload artwork by clicking or dragging">
+    <div class="dz-icon" aria-hidden="true">🖼</div>
+    <p class="dz-title">Drop your art here</p>
+    <p class="dz-sub">
+      Drag &amp; drop images, or <span tabindex="0" role="button" onclick="document.getElementById('file-input').click()">browse your device</span><br>
+      <small>JPEG, PNG, WEBP, GIF — up to 12 MB each</small>
+    </p>
+  </div>
+
+  <!-- Privacy disclaimer -->
+  <p class="disclaimer" role="note">
+    <span class="disc-icon" aria-hidden="true">🔒</span>
+    <span>
+      <strong>Completely private.</strong> Everything you upload or draw is stored only in your browser's local storage
+      on this device. Nothing is sent to any server. No one else can see your collection — not even us.
+    </span>
+  </p>
+
+  <!-- The collection grid -->
+  <div class="coll-grid" id="coll-grid" aria-live="polite" aria-label="Your collection"></div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     DRAW STUDIO MODAL
+══════════════════════════════════════════════════════════ -->
+<div id="draw-modal" role="dialog" aria-modal="true" aria-label="Drawing Studio">
+  <div class="draw-wrap">
+
+    <div class="draw-header">
+      <span class="draw-title">Draw Studio ✦</span>
+
+      <div class="draw-tools" role="toolbar" aria-label="Drawing tools">
+
+        <!-- Tool buttons -->
+        <button class="tool-btn on" data-tool="pen"    title="Pen">Pen</button>
+        <button class="tool-btn"    data-tool="eraser" title="Eraser">Eraser</button>
+        <button class="tool-btn"    data-tool="fill"   title="Flood fill">Fill</button>
+
+        <div class="tool-sep" aria-hidden="true"></div>
+
+        <!-- Colour swatches -->
+        <div class="color-picker-wrap" role="group" aria-label="Brush colour">
+          <button class="color-dot on" data-color="#ffffff" style="background:#ffffff" title="White"  aria-label="White"></button>
+          <button class="color-dot"    data-color="#ff5e5e" style="background:#ff5e5e" title="Red"    aria-label="Red"></button>
+          <button class="color-dot"    data-color="#ffe44d" style="background:#ffe44d" title="Yellow" aria-label="Yellow"></button>
+          <button class="color-dot"    data-color="#4ecdc4" style="background:#4ecdc4" title="Teal"   aria-label="Teal"></button>
+          <button class="color-dot"    data-color="#74b9ff" style="background:#74b9ff" title="Blue"   aria-label="Blue"></button>
+          <button class="color-dot"    data-color="#fd79a8" style="background:#fd79a8" title="Pink"   aria-label="Pink"></button>
+          <button class="color-dot"    data-color="#55efc4" style="background:#55efc4" title="Mint"   aria-label="Mint"></button>
+          <button class="color-dot"    data-color="#1a1a22" style="background:#1a1a22;border:1px solid rgba(255,255,255,.2)" title="Dark" aria-label="Dark"></button>
+          <!-- custom colour -->
+          <label title="Pick any colour" aria-label="Custom colour">
+            <input type="color" id="brush-color" value="#ffffff" aria-label="Custom colour picker"/>
+          </label>
+        </div>
+
+        <div class="tool-sep" aria-hidden="true"></div>
+
+        <!-- Size -->
+        <div class="size-wrap">
+          <label for="brush-size">Size</label>
+          <input type="range" id="brush-size" min="1" max="60" value="6" aria-label="Brush size"/>
+        </div>
+
+        <!-- Opacity -->
+        <div class="opacity-wrap">
+          <label for="brush-opacity">Opacity</label>
+          <input type="range" id="brush-opacity" min="0.05" max="1" step="0.05" value="1" aria-label="Brush opacity"/>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Canvas -->
+    <div class="draw-canvas-area">
+      <canvas id="draw-canvas" aria-label="Drawing canvas"></canvas>
+    </div>
+
+    <!-- Footer -->
+    <div class="draw-footer">
+      <div class="draw-footer-left">
+        <input type="text" id="draw-name-input" placeholder="Name your artwork…" maxlength="60" aria-label="Artwork name"/>
+        <button id="draw-clear" class="btn-draw-clear">Clear Canvas</button>
+      </div>
+      <button id="draw-cancel" class="btn-draw-cancel">Discard</button>
+      <button id="draw-save"   class="btn-draw-save">Save to Collection</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     LIGHTBOX
+══════════════════════════════════════════════════════════ -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Artwork viewer">
+  <button id="lb-close" aria-label="Close viewer">✕</button>
+  <img id="lb-img" src="" alt="Enlarged artwork"/>
+  <p id="lb-caption"></p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer id="footer">
+  <div>
+    <p class="footer-brand">Arti<b>san</b></p>
+    <p class="footer-tagline">A gallery for those who feel more than they can say.</p>
+  </div>
+  <p class="footer-copy">
+    &copy; 2025 Artisan Gallery.<br>
+    All original artworks belong to their respective owners.<br>
+    Your collection is stored privately on your device.
+  </p>
+</footer>
+
+<!-- Toast -->
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- Scripts -->
+<script src="../scripts/art_page.js"></script>
+</body>
+</html>

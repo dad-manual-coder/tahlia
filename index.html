@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tahlia</title>
+    <meta name="theme-color" content="#14080c" />
+    <link rel="icon" href="/svg/mark.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/home/loader.css" />
+  </head>
+  <body>
+    <div class="stage" id="stage">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="./images/home/silk.jpg"
+      >
+        <source src="./video/silk.mp4" type="video/mp4" />
+      </video>
+      <img class="poster" src="./images/home/silk.jpg" alt="" hidden />
+      <div class="wash"></div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+      <div class="orbs" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <main class="frame">
+        <div class="panel">
+          <p class="kicker">A private house</p>
+          <h1>Tahlia</h1>
+          <p class="sub">wardrobe · art · sport · life</p>
+          <div class="meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Opening">
+            <span id="bar"></span>
+          </div>
+          <p class="status" id="status">Warming the lights</p>
+        </div>
+      </main>
+      <button class="skip" id="skip" type="button">Enter</button>
+    </div>
+    <script src="./scripts/home/boot.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loading Favorite Team</title>
+    <link rel="icon" href="../images/svg/mark.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/home/team-loader.css" />
+  </head>
+  <body>
+    <div class="field">
+      <div class="glow"></div>
+      <div class="panel">
+        <p class="kicker">Match day</p>
+        <h1>Favorite team</h1>
+        <p>Lights up. Jersey on. Taking the field.</p>
+        <div class="meter"><span id="bar"></span></div>
+      </div>
+    </div>
+    <button class="skip" id="skip" type="button">Skip</button>
+    <script type="module">
+      import { runPortal } from "../scripts/home/portal.js";
+      runPortal({ target: "../pages/sport_page.html", duration: 4200 });
+    </script>
+  </body>
+</html>

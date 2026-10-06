@@ -1,0 +1,178 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║          CHELSEA FC SPORT PAGE — IMAGE MANIFEST                        ║
+║  All images go in:  images/sports/                                     ║
+║  Supported formats: .jpg  .jpeg  .png  .webp                           ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+Drop your images inside:
+  images/
+  └── sports/
+      └── [filename listed below]
+
+The page already references every filename below. Once you add the file,
+the image appears automatically — no code changes needed.
+
+If an image is missing the page still works: it shows a coloured placeholder
+so nothing breaks while you're building the collection.
+
+────────────────────────────────────────────────────────────────────────────
+ HERO SECTION
+────────────────────────────────────────────────────────────────────────────
+
+ FILENAME                    WHAT TO USE
+ ──────────────────────────────────────────────────────────────────────────
+ hero_stadium.jpg            Wide or aerial shot of Stamford Bridge —
+                             best with lights on (evening/night match).
+                             Alternatively a dramatic Chelsea team shot.
+
+                             Search: "Stamford Bridge aerial view HD"
+                             Source: Getty Images, Unsplash ("stadium football night")
+
+────────────────────────────────────────────────────────────────────────────
+ SQUAD PLAYER CARDS
+────────────────────────────────────────────────────────────────────────────
+
+ FILENAME                    PLAYER              WHAT TO USE
+ ──────────────────────────────────────────────────────────────────────────
+ player_reece_james.jpg      Reece James         Portrait or action shot
+                                                 in Chelsea home kit (blue).
+                                                 Object-position: top, so
+                                                 head/shoulders should be
+                                                 in the upper portion.
+
+ player_cole_palmer.jpg      Cole Palmer         Same guidance — upper body
+                                                 visible, Chelsea shirt.
+                                                 He often wears #20.
+
+ player_nicolas_jackson.jpg  Nicolas Jackson     Action or portrait.
+                                                 Chelsea blue shirt.
+
+ player_enzo_fernandez.jpg   Enzo Fernández      Portrait or celebrating.
+                                                 Chelsea shirt, #8.
+
+ player_robert_sanchez.jpg   Robert Sánchez      Goalkeeper gloves visible
+                                                 preferred. Chelsea kit.
+
+ player_frank_lampard.jpg    Frank Lampard       Classic Lampard — could be
+  (LEGEND CARD)                                  action shot from peak era
+                                                 (2003–2012), scoring or
+                                                 celebrating. Golden era kit.
+
+ TIP: Search each name on Google Images or Getty. Filter by "large" size.
+      For free images try: commons.wikimedia.org or unsplash.com/s/photos/chelsea-fc
+
+────────────────────────────────────────────────────────────────────────────
+ DROGBA LEGEND REVEAL  ⭐ MOST IMPORTANT
+────────────────────────────────────────────────────────────────────────────
+
+ FILENAME                    WHAT TO USE
+ ──────────────────────────────────────────────────────────────────────────
+ drogba_main.jpg             Didier Drogba — this is the centrepiece of
+                             the "System Legend" reveal section.
+
+                             BEST CHOICE: Full-height or 3/4 portrait of
+                             Drogba in Chelsea's royal blue shirt, arms
+                             spread or celebrating — the image that fills
+                             the left half of the reveal panel.
+
+                             IDEAL DIMENSIONS: Portrait orientation,
+                             at least 600×800px. Object-position is
+                             "top center" so the face/upper body should
+                             be in the upper-centre of the frame.
+
+                             SUGGESTIONS:
+                             • His 2012 CL final celebration
+                             • His iconic celebration vs Barcelona 2012
+                             • The famous header silhouette image
+                             • Him lifting the CL trophy in Munich
+
+                             Search: "Didier Drogba Chelsea HD"
+                             Source: Getty Images, Wikimedia Commons,
+                             or premium sports photo sites.
+
+────────────────────────────────────────────────────────────────────────────
+ GALLERY SECTION  (8 slots)
+────────────────────────────────────────────────────────────────────────────
+
+ FILENAME                       CAPTION IN UI                WHAT TO USE
+ ──────────────────────────────────────────────────────────────────────────
+ gallery_stamford_bridge.jpg    Stamford Bridge              Wide aerial or
+  (LARGE — spans 2 rows)                                     facade shot of
+                                                             the ground.
+
+ gallery_cl_trophy.jpg          Champions League 2012        Team celebrating
+                                                             with CL trophy,
+                                                             Munich 2012.
+                                                             Blue confetti
+                                                             ideal.
+
+ gallery_fans.jpg               The Blue Faithful            Packed Stamford
+                                                             Bridge crowd,
+                                                             blue scarves.
+
+ gallery_drogba_celebrate.jpg   Drogba — The Celebration     Drogba fist pump
+                                                             or arms spread.
+                                                             Different shot
+                                                             from drogba_main.
+
+ gallery_training.jpg           Cobham Training Ground       Chelsea squad
+                                                             training in blue
+                                                             training kit.
+
+ gallery_kit_home.jpg           The Royal Blue               Close-up of
+                                                             Chelsea home
+                                                             shirt badge or
+                                                             players in kit.
+
+ gallery_lampard_action.jpg     Lampard — 211 Goals          Lampard striking
+                                                             a shot or in
+                                                             full sprint,
+                                                             classic era.
+
+ gallery_chelsea_crest.jpg      The Chelsea Crest            High-res Chelsea
+                                                             badge — on shirt,
+                                                             stadium wall, or
+                                                             standalone.
+
+────────────────────────────────────────────────────────────────────────────
+ TOTAL FILES NEEDED: 15
+────────────────────────────────────────────────────────────────────────────
+
+ PRIORITY ORDER (add these first for best visual impact):
+  1. drogba_main.jpg              ← The legend reveal centrepiece
+  2. hero_stadium.jpg             ← First thing visitors see
+  3. gallery_cl_trophy.jpg        ← Most iconic Chelsea moment
+  4. gallery_stamford_bridge.jpg  ← Gallery hero
+  5. gallery_drogba_celebrate.jpg ← Second Drogba image
+  6–15. Everything else
+
+────────────────────────────────────────────────────────────────────────────
+ WHERE TO DOWNLOAD FREE, HIGH-QUALITY IMAGES
+────────────────────────────────────────────────────────────────────────────
+
+  General sports (free):
+  • https://unsplash.com  — search "football", "soccer stadium", "crowd"
+  • https://commons.wikimedia.org — search player/match names
+  • https://www.pexels.com — similar to Unsplash
+
+  Chelsea-specific (check individual image licenses):
+  • Google Images → Tools → Size: Large → filter by usage rights
+  • Chelsea FC official site (chelseasfc.com) — press section
+  • Getty Images free tier (for editorial/personal use)
+
+  NOTE: For a personal fan project, editorial use of press photos
+  is generally acceptable. Always credit the photographer where possible.
+
+────────────────────────────────────────────────────────────────────────────
+ IMAGE SIZING GUIDE
+────────────────────────────────────────────────────────────────────────────
+
+  hero_stadium.jpg            → min 1920×1080px  (16:9 landscape)
+  player_*.jpg                → min 400×500px    (portrait, face at top)
+  drogba_main.jpg             → min 600×800px    (portrait, face upper third)
+  gallery_stamford_bridge.jpg → min 800×500px    (landscape preferred)
+  gallery_*.jpg               → min 600×400px    (landscape preferred)
+
+  All images use object-fit:cover so exact dimensions don't matter —
+  just ensure the key subject (face, badge, action) is centred or at top.
+────────────────────────────────────────────────────────────────────────────

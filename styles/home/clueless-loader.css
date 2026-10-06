@@ -1,0 +1,109 @@
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: #efd34a;
+  color: #1a0f14;
+  font-family: "Comic Neue", "Trebuchet MS", sans-serif;
+  overflow: hidden;
+}
+
+.crt {
+  position: relative;
+  min-height: 100dvh;
+  background:
+    radial-gradient(120% 90% at 50% 40%, transparent 40%, rgb(0 0 0 / 0.28)),
+    url("/assets/images/clueless-computer.jpg") center/cover no-repeat;
+}
+
+.crt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0.12) 0 1px,
+    transparent 1px 3px
+  );
+  pointer-events: none;
+}
+
+.window {
+  position: relative;
+  width: min(520px, calc(100% - 24px));
+  margin: 0 auto;
+  top: 12vh;
+  background: #e9d8c4;
+  border: 4px solid #2b1520;
+  box-shadow: 8px 8px 0 #2b1520;
+}
+
+.titlebar {
+  background: #d46a86;
+  color: #fffdfa;
+  padding: 8px 10px;
+  font-family: "Archivo Black", sans-serif;
+  letter-spacing: 0.04em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.body {
+  padding: 18px 16px 20px;
+  background: #fff6c8;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  letter-spacing: -0.03em;
+}
+
+.plaid {
+  height: 18px;
+  margin: 10px 0 16px;
+  background:
+    repeating-linear-gradient(90deg, #d12b4a 0 10px, #efd34a 10px 20px, #2b1520 20px 22px, #efd34a 22px 32px);
+}
+
+.log {
+  font-family: "VT323", monospace;
+  font-size: 22px;
+  line-height: 1.25;
+  min-height: 5.5em;
+  white-space: pre-wrap;
+}
+
+.bar {
+  margin-top: 16px;
+  height: 22px;
+  border: 3px solid #2b1520;
+  background: #fff;
+}
+
+.bar > span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    #d46a86 0 10px,
+    #2b1520 10px 14px
+  );
+}
+
+.skip {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 3px solid #2b1520;
+  background: #fff6c8;
+  font-family: "Archivo Black", sans-serif;
+  box-shadow: 4px 4px 0 #2b1520;
+}
+
+.blink { animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }

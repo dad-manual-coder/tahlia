@@ -1,0 +1,179 @@
+@import url("tokens.css");
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: #14080c;
+  color: #fbf3f6;
+}
+
+.stage {
+  position: relative;
+  min-height: 100dvh;
+  isolation: isolate;
+}
+
+.stage video,
+.stage .poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.vignette,
+.grain,
+.wash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.wash {
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgb(20 8 12 / 0.28), rgb(20 8 12 / 0.55) 55%, rgb(12 6 8 / 0.78)),
+    radial-gradient(120% 80% at 50% 100%, rgb(142 58 84 / 0.35), transparent 55%);
+}
+
+.vignette {
+  z-index: 2;
+  box-shadow: inset 0 0 18vh 6vh rgb(10 4 6 / 0.55);
+}
+
+.grain {
+  z-index: 3;
+  opacity: 0.14;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.frame {
+  position: relative;
+  z-index: 4;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px 40px;
+}
+
+.panel {
+  width: min(640px, 100%);
+  text-align: center;
+}
+
+.kicker {
+  margin: 0 0 18px;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, #fbf3f6 72%, #d46a86);
+  opacity: 0;
+  animation: rise 900ms var(--ease) 200ms forwards;
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(4.6rem, 16vw, 8.4rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  opacity: 0;
+  animation: rise 1100ms var(--ease) 380ms forwards;
+}
+
+.sub {
+  margin: 18px 0 0;
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  text-transform: lowercase;
+  color: color-mix(in oklab, #fbf3f6 70%, #d46a86);
+  opacity: 0;
+  animation: rise 900ms var(--ease) 620ms forwards;
+}
+
+.meter {
+  margin: 48px auto 0;
+  width: min(320px, 78%);
+  height: 2px;
+  background: color-mix(in oklab, #fbf3f6 18%, transparent);
+  overflow: hidden;
+  opacity: 0;
+  animation: rise 700ms var(--ease) 900ms forwards;
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #fbf3f6;
+  box-shadow: 0 0 18px #d46a86;
+  transition: width 420ms var(--ease);
+}
+
+.status {
+  margin: 16px 0 0;
+  min-height: 1.4em;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, #fbf3f6 62%, transparent);
+  opacity: 0;
+  animation: rise 700ms var(--ease) 1000ms forwards;
+}
+
+.skip {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 5;
+  border: 1px solid color-mix(in oklab, #fbf3f6 26%, transparent);
+  background: color-mix(in oklab, #14080c 40%, transparent);
+  color: #fbf3f6;
+  padding: 10px 16px;
+  min-height: 44px;
+  border-radius: 999px;
+  font: 500 12px/1 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  animation: rise 600ms var(--ease) 1400ms forwards;
+}
+
+.skip:hover { background: color-mix(in oklab, #d46a86 35%, #14080c); }
+.skip:active { scale: 0.96; }
+
+.orbs span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f4c9d6;
+  opacity: 0.45;
+  z-index: 3;
+  animation: drift 7s ease-in-out infinite;
+}
+.orbs span:nth-child(1) { left: 12%; top: 22%; animation-delay: 0s; }
+.orbs span:nth-child(2) { right: 18%; top: 30%; width: 5px; height: 5px; animation-delay: 1.4s; }
+.orbs span:nth-child(3) { left: 22%; bottom: 24%; animation-delay: 2s; }
+.orbs span:nth-child(4) { right: 14%; bottom: 18%; width: 6px; height: 6px; animation-delay: 0.6s; }
+
+.stage.is-leaving .frame,
+.stage.is-leaving .wash {
+  opacity: 0;
+  transition: opacity 700ms var(--ease);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}

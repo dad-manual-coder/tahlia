@@ -1,0 +1,22 @@
+/* ═══════════════════════════════════════════════════════════
+   ARTISAN — dark.css   (Dark Classic — default)
+═══════════════════════════════════════════════════════════ */
+:root{
+  --bg:             #0c0c0e;
+  --bg-alt:         #111115;
+  --bg-card:        #18181e;
+  --text:           #ede8de;
+  --text-muted:     #7a7470;
+  --accent:         #b5392b;
+  --accent2:        #c9a84c;
+  --border:         rgba(237,232,222,.09);
+  --nav-bg:         rgba(12,12,14,.82);
+  --hero-bg:        radial-gradient(ellipse 55% 70% at 75% 50%,rgba(181,57,43,.14) 0%,transparent 60%),
+                    radial-gradient(ellipse 35% 50% at 20% 60%,rgba(74,111,165,.12) 0%,transparent 55%),
+                    radial-gradient(ellipse 40% 35% at 50% 15%,rgba(201,168,76,.08) 0%,transparent 50%);
+  --frame-shadow:   0 24px 72px rgba(0,0,0,.7);
+  --card-shadow:    rgba(0,0,0,.5);
+  --shadow-accent:  rgba(181,57,43,.3);
+  --drop-bg:        rgba(201,168,76,.04);
+  --drop-bg-hover:  rgba(201,168,76,.09);
+}

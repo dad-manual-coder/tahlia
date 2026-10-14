@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cher's Wardrobe — Fall Fashions</title>
+    <meta
+      name="description"
+      content="As if! Mix a 1995 closet, hit Dress Me, and let the computer decide if it is a match."
+    />
+    <link rel="icon" href="../images/ui/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/clueless_wardrobe.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="bezel" role="application" aria-label="Cher's wardrobe computer">
+        <div class="screen" id="screen">
+          <header class="title-bar">
+            <a class="home-btn" href="/" title="Back to home">HOME</a>
+            <p class="title-left">CHER'S WARDROBE</p>
+            <button class="mute-btn" id="muteBtn" type="button" aria-label="Toggle music">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M4 9v6h4l5 4V5L8 9H4zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </header>
+
+          <div class="stage">
+            <div class="side side-left">
+              <button class="big-btn" id="browseBtn" type="button">BROWSE</button>
+            </div>
+
+            <div class="center-column" id="centerColumn">
+              <p class="fall-tag">FALL FASHIONS.</p>
+
+              <div class="display" id="topDisplay">
+                <img id="topImg" alt="Upper garment" />
+                <span class="slot-label" id="topLabel">TOPS</span>
+              </div>
+
+              <div class="transport" data-row="upper">
+                <button type="button" data-act="back" aria-label="Previous upper item">
+                  <svg viewBox="0 0 54 28" aria-hidden="true">
+                    <polygon points="24,4 6,14 24,24" />
+                    <polygon points="46,4 28,14 46,24" />
+                  </svg>
+                </button>
+                <button type="button" data-act="play" aria-label="Play or pause upper items" class="play-btn">
+                  <svg class="icon-play" viewBox="0 0 28 28" aria-hidden="true">
+                    <polygon points="8,4 24,14 8,24" />
+                  </svg>
+                  <svg class="icon-stop" viewBox="0 0 28 28" aria-hidden="true">
+                    <rect x="7" y="7" width="14" height="14" />
+                  </svg>
+                </button>
+                <button type="button" data-act="fwd" aria-label="Next upper item">
+                  <svg viewBox="0 0 54 28" aria-hidden="true">
+                    <polygon points="8,4 26,14 8,24" />
+                    <polygon points="30,4 48,14 30,24" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="display" id="botDisplay">
+                <img id="botImg" alt="Lower garment" />
+                <span class="slot-label" id="botLabel">BOTTOMS</span>
+              </div>
+
+              <div class="transport" data-row="lower">
+                <button type="button" data-act="back" aria-label="Previous lower item">
+                  <svg viewBox="0 0 54 28" aria-hidden="true">
+                    <polygon points="24,4 6,14 24,24" />
+                    <polygon points="46,4 28,14 46,24" />
+                  </svg>
+                </button>
+                <button type="button" data-act="play" aria-label="Play or pause lower items" class="play-btn">
+                  <svg class="icon-play" viewBox="0 0 28 28" aria-hidden="true">
+                    <polygon points="8,4 24,14 8,24" />
+                  </svg>
+                  <svg class="icon-stop" viewBox="0 0 28 28" aria-hidden="true">
+                    <rect x="7" y="7" width="14" height="14" />
+                  </svg>
+                </button>
+                <button type="button" data-act="fwd" aria-label="Next lower item">
+                  <svg viewBox="0 0 54 28" aria-hidden="true">
+                    <polygon points="8,4 26,14 8,24" />
+                    <polygon points="30,4 48,14 30,24" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="mismatch-layer" id="mismatchLayer" hidden>
+                <div class="mismatch-banner" role="alert">MIS-MATCH!</div>
+              </div>
+
+              <div class="match-layer" id="matchLayer" hidden>
+                <div class="holo-scan" aria-hidden="true"></div>
+                <img class="holo-look" id="holoLook" alt="Hologram of the finished look" />
+                <p class="match-caption" id="matchCaption">IT'S A MATCH</p>
+              </div>
+            </div>
+
+            <div class="side side-right">
+              <button class="big-btn" id="dressBtn" type="button">DRESS<br />ME</button>
+            </div>
+          </div>
+
+          <nav class="cat-bar" id="catBar" aria-label="Wardrobe categories">
+            <button type="button" data-cat="shoes">SHOES</button>
+            <button type="button" data-cat="jewelry">JEWELRY</button>
+            <button type="button" data-cat="scarves">SCARVES</button>
+            <button type="button" data-cat="pantyhose">PANTYHOSE</button>
+            <button type="button" data-cat="underwear">UNDERWEAR</button>
+            <button type="button" data-cat="pants">PANTS</button>
+            <button type="button" data-cat="sweaters">SWEATERS</button>
+            <button type="button" data-cat="more" class="more-btn">MORE</button>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <dialog class="more-dialog" id="moreDialog">
+      <form class="more-card" id="uploadForm" action="#" method="post">
+        <p class="more-title">MORE — ADD TO CLOSET</p>
+        <p class="more-copy">
+          Drop in a photo of a real garment. Name it so you can find it later. The computer will
+          score it with the rest of the closet.
+        </p>
+        <p class="upload-error" id="uploadError" hidden></p>
+        <label class="field upload-drop">
+          <span>PHOTO</span>
+          <input id="uploadFile" type="file" accept="image/*" />
+          <img id="uploadPreview" class="upload-preview" alt="Chosen photo preview" hidden />
+        </label>
+        <label class="field">
+          <span>NAME</span>
+          <input id="uploadName" type="text" maxlength="40" placeholder="black-dress" autocomplete="off" />
+        </label>
+        <label class="field">
+          <span>SLOT</span>
+          <select id="uploadSlot">
+            <option value="tops">Tops / jackets</option>
+            <option value="sweaters">Sweaters</option>
+            <option value="dresses">Dresses</option>
+            <option value="bottoms">Skirts / shorts</option>
+            <option value="pants">Pants</option>
+            <option value="shoes">Shoes</option>
+            <option value="jewelry">Jewelry</option>
+            <option value="scarves">Scarves</option>
+            <option value="pantyhose">Pantyhose</option>
+            <option value="underwear">Underwear</option>
+            <option value="more">More / extras</option>
+          </select>
+        </label>
+        <div class="field-row">
+          <label class="field">
+            <span>COLOR</span>
+            <select id="uploadColor">
+              <option>black</option>
+              <option>white</option>
+              <option>yellow</option>
+              <option>red</option>
+              <option>navy</option>
+              <option>pink</option>
+              <option>cream</option>
+              <option>denim</option>
+              <option>khaki</option>
+              <option>brown</option>
+              <option>gold</option>
+              <option>silver</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>PATTERN</span>
+            <select id="uploadPattern">
+              <option value="solid">solid</option>
+              <option value="plaid">plaid</option>
+              <option value="stripe">stripe</option>
+              <option value="print">print</option>
+              <option value="colorblock">colorblock</option>
+            </select>
+          </label>
+        </div>
+        <div class="more-actions">
+          <button type="button" class="dlg-btn ghost" id="cancelUpload">CANCEL</button>
+          <button type="submit" class="dlg-btn" id="saveUpload">SAVE ITEM</button>
+        </div>
+      </form>
+    </dialog>
+
+    <audio id="themeAudio" src="../audio/wardrobe-theme.mp3" loop preload="auto"></audio>
+    <script src="../scripts/clueless_wardrobe.js"></script>
+  </body>
+</html>

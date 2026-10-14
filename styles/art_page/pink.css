@@ -1,0 +1,22 @@
+/* ═══════════════════════════════════════════════════════════
+   ARTISAN — pink.css   (Rose & Plum — feminine bold)
+═══════════════════════════════════════════════════════════ */
+:root{
+  --bg:             #180a14;
+  --bg-alt:         #221030;
+  --bg-card:        #2a1028;
+  --text:           #fce8f4;
+  --text-muted:     #b87aaa;
+  --accent:         #d4327a;
+  --accent2:        #f0b8d8;
+  --border:         rgba(252,232,244,.1);
+  --nav-bg:         rgba(24,10,20,.84);
+  --hero-bg:        radial-gradient(ellipse 55% 70% at 75% 50%,rgba(212,50,122,.18) 0%,transparent 60%),
+                    radial-gradient(ellipse 35% 50% at 20% 60%,rgba(155,89,182,.16) 0%,transparent 55%),
+                    radial-gradient(ellipse 40% 35% at 50% 15%,rgba(240,184,216,.08) 0%,transparent 50%);
+  --frame-shadow:   0 24px 72px rgba(0,0,0,.65);
+  --card-shadow:    rgba(212,50,122,.2);
+  --shadow-accent:  rgba(212,50,122,.4);
+  --drop-bg:        rgba(240,184,216,.05);
+  --drop-bg-hover:  rgba(240,184,216,.1);
+}

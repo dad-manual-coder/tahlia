@@ -1,0 +1,82 @@
+:root {
+  --rose: #d46a86;
+  --rose-deep: #8e3a54;
+  --rose-soft: #f4c9d6;
+  --cream: #fbf3f6;
+  --paper: #f7e9ee;
+  --ink: #2b1520;
+  --ink-soft: #5a3844;
+  --muted: #8a6570;
+  --line: color-mix(in oklab, var(--ink) 12%, transparent);
+  --line-strong: color-mix(in oklab, var(--ink) 22%, transparent);
+  --shadow: 0 18px 40px color-mix(in oklab, var(--ink) 10%, transparent);
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Outfit", "Segoe UI", sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+  --motion-slow: 400ms;
+  --bg: var(--cream);
+  --fg: var(--ink);
+  --elev: #fffdfa;
+  --night-veil: 0;
+}
+
+html[data-theme="dusk"] {
+  --bg: #2a1820;
+  --fg: #f7e9ee;
+  --elev: #3a222c;
+  --ink-soft: #e4c4ce;
+  --muted: #c9a3ae;
+  --line: color-mix(in oklab, #fbf3f6 14%, transparent);
+  --line-strong: color-mix(in oklab, #fbf3f6 24%, transparent);
+  --shadow: 0 18px 50px rgb(0 0 0 / 0.28);
+}
+
+html[data-theme="night"] {
+  --bg: #12080c;
+  --fg: #ead7de;
+  --elev: #1c1015;
+  --ink-soft: #d9b8c2;
+  --muted: #a88993;
+  --rose: #c97b90;
+  --line: color-mix(in oklab, #ead7de 12%, transparent);
+  --line-strong: color-mix(in oklab, #ead7de 22%, transparent);
+  --shadow: 0 16px 40px rgb(0 0 0 / 0.4);
+  --night-veil: 0.55;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: var(--font-body);
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+button, [role="button"] { cursor: pointer; }
+button:disabled { cursor: default; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

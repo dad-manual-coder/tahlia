@@ -1,0 +1,21 @@
+/* ═══════════════════════════════════════════════════════════
+   ARTISAN — light.css   (Parchment — feminine-neutral)
+═══════════════════════════════════════════════════════════ */
+:root{
+  --bg:             #f5f1ea;
+  --bg-alt:         #ede8de;
+  --bg-card:        #ffffff;
+  --text:           #1c1510;
+  --text-muted:     #7a6e62;
+  --accent:         #7b3425;
+  --accent2:        #9a6b28;
+  --border:         rgba(28,21,16,.1);
+  --nav-bg:         rgba(245,241,234,.88);
+  --hero-bg:        radial-gradient(ellipse 55% 70% at 75% 50%,rgba(123,52,37,.1) 0%,transparent 60%),
+                    radial-gradient(ellipse 35% 50% at 20% 60%,rgba(154,107,40,.08) 0%,transparent 55%);
+  --frame-shadow:   0 24px 72px rgba(0,0,0,.18);
+  --card-shadow:    rgba(0,0,0,.12);
+  --shadow-accent:  rgba(123,52,37,.25);
+  --drop-bg:        rgba(154,107,40,.04);
+  --drop-bg-hover:  rgba(154,107,40,.08);
+}

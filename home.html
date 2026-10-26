@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tahlia — Home</title>
+    <meta name="theme-color" content="#fbf3f6" />
+    <link rel="icon" href="/assets/svg/mark.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/home/home.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <div class="brand">
+          <img src="./images/home/portrait.jpg" alt="Tahlia" />
+          <div>
+            <h1>Tahlia</h1>
+            <p>Personal dashboard</p>
+          </div>
+        </div>
+        <div class="clocks">
+          <div class="clock">
+            <small>Where you are</small>
+            <strong id="you-time">—</strong>
+            <em id="you-place">Locating…</em>
+          </div>
+          <div class="clock">
+            <small>Melbourne</small>
+            <strong id="mel-time">—</strong>
+            <em id="mel-date">Australia</em>
+          </div>
+        </div>
+      </header>
+
+      <section class="notice" id="notice" aria-live="polite">
+        <span class="dot" aria-hidden="true"></span>
+        <div>
+          <h2 id="notice-title">Good morning</h2>
+          <p id="notice-body">Fetching the hour…</p>
+        </div>
+        <button type="button" id="dismiss" aria-label="Dismiss notification">×</button>
+      </section>
+
+      <section class="hero">
+        <article class="card hello">
+          <p class="eyebrow" id="eyebrow">Today</p>
+          <h2 id="hello">Hello, Tahlia.</h2>
+          <p id="you-date" class="chip" style="display:inline-block;margin-top:14px"></p>
+          <div class="chips" id="chips"></div>
+        </article>
+        <article class="card beat">
+          <h3>Melbourne, this hour</h3>
+          <p id="beat">Holding the river light.</p>
+          <p id="season" style="margin-top:12px"></p>
+        </article>
+      </section>
+
+      <section class="launches" aria-label="Rooms">
+        <article class="card launch">
+          <div class="orbits">
+            <span class="spark" aria-hidden="true"></span>
+            <span class="spark s2" aria-hidden="true"></span>
+            <img src="./images/home/card-clueless.jpg" alt="A 1990s closet packed with plaid" />
+          </div>
+          <h3>Clueless wardrobe</h3>
+          <p>A 1995 computer closet. Mix, match, and as-if your way through the rails.</p>
+          <a class="open" href="./loaders/clueless_loader.html">Open</a>
+        </article>
+        <article class="card launch">
+          <div class="orbits">
+            <span class="spark" aria-hidden="true"></span>
+            <span class="spark s2" aria-hidden="true"></span>
+            <img src="./images/home/card-team.jpg" alt="A stadium court at night" />
+          </div>
+          <h3>Favorite team</h3>
+          <p>Match-day energy, the jersey, the score, the noise — her team only.</p>
+          <a class="open" href="./loaders/fav_team_loader.html">Open</a>
+        </article>
+        <article class="card launch">
+          <div class="orbits">
+            <span class="spark" aria-hidden="true"></span>
+            <span class="spark s2" aria-hidden="true"></span>
+            <img src="./images/home/card-closet.jpg" alt="A modern marble walk-in closet" />
+          </div>
+          <h3>Digital closet</h3>
+          <p>Upload, pair, and get dressed. The modern cousin of the 90s closet.</p>
+          <a class="open" href="./loaders/digital_closet_loader.html">Open</a>
+        </article>
+        <article class="card launch">
+          <div class="orbits">
+            <span class="spark" aria-hidden="true"></span>
+            <span class="spark s2" aria-hidden="true"></span>
+            <img src="./images/home/card-art.jpg" alt="Oil paints and a canvas in a studio" />
+          </div>
+          <h3>Art</h3>
+          <p>The studio room. Paint, references, and a quiet wall that belongs to her.</p>
+          <a class="open" href="./loaders/art_loader.html">Open</a>
+        </article>
+      </section>
+
+      <section class="grid3">
+        <article class="card">
+          <label class="meta" for="notes">Notes for later</label>
+          <textarea id="notes" placeholder="A thought, a measurement, a plan…"></textarea>
+        </article>
+        <article class="card">
+          <label class="meta">Today’s shape</label>
+          <div class="plan-row"><span>Morning</span><input id="plan-morning" type="text" /></div>
+          <div class="plan-row"><span>Midday</span><input id="plan-midday" type="text" /></div>
+          <div class="plan-row"><span>Afternoon</span><input id="plan-afternoon" type="text" /></div>
+          <div class="plan-row"><span>Night</span><input id="plan-night" type="text" /></div>
+        </article>
+        <article class="card">
+          <label class="meta">Mood</label>
+          <div class="moods" id="moods"></div>
+          <blockquote>
+            <span id="quote"></span>
+            <cite id="quote-by"></cite>
+          </blockquote>
+        </article>
+      </section>
+
+      <div class="toolbar">
+        <button class="ghost" id="notify-btn" type="button">Time alerts</button>
+        <button class="ghost" id="theme-auto" type="button">Auto light</button>
+        <button class="ghost" id="theme-toggle" type="button">Shift light</button>
+      </div>
+
+      <footer class="foot">
+        <span>Clock follows wherever you are. Melbourne stays on the right.</span>
+        <span id="where"></span>
+      </footer>
+    </div>
+    <script type="module" src="./scripts/home/home.js"></script>
+  </body>
+</html>

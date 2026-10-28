@@ -1,0 +1,88 @@
+╔═══════════════════════════════════════════════════════════════════════╗
+║              ARTISAN — IMAGE MANIFEST                                ║
+║  All images go in:  artisan/images/art_section/                      ║
+║  Supported formats: .jpg  .jpeg  .png  .webp                         ║
+╚═══════════════════════════════════════════════════════════════════════╝
+
+Place each image inside:
+  artisan/
+  └── images/
+      └── art_section/
+          └── [filename listed below]
+
+The code already references these exact filenames.
+Download the painting from a public-domain source (e.g. Wikimedia Commons,
+The Metropolitan Museum Open Access, or Unsplash for movement samples),
+then save/rename it to match the filename below exactly.
+
+──────────────────────────────────────────────────────────────────────
+ HERO + MASTERWORKS GRID
+──────────────────────────────────────────────────────────────────────
+
+ FILENAME                       PAINTING / SUBJECT                     ARTIST / SOURCE HINT
+ ─────────────────────────────────────────────────────────────────────
+ starry_night.jpg               The Starry Night                       Vincent van Gogh (1889)
+                                → Wikimedia: "Van_Gogh_-_Starry_Night"
+
+ girl_pearl_earring.jpg         Girl with a Pearl Earring              Johannes Vermeer (1665)
+                                → Wikimedia: "Girl_with_a_Pearl_Earring"
+
+ persistence_of_memory.jpg      The Persistence of Memory              Salvador Dalí (1931)
+                                → MoMA collection image / Wikimedia
+
+ great_wave.jpg                 The Great Wave off Kanagawa            Katsushika Hokusai (c.1831)
+                                → Wikimedia: "The_Great_Wave_off_Kanagawa"
+
+ mona_lisa.jpg                  Mona Lisa                              Leonardo da Vinci (c.1503–1519)
+                                → Wikimedia: "Mona_Lisa,_by_Leonardo_da_Vinci"
+
+ the_scream.jpg                 The Scream                             Edvard Munch (1893)
+                                → Wikimedia: "The_Scream_by_Edvard_Munch"
+
+──────────────────────────────────────────────────────────────────────
+ MOVEMENT CARDS (sample/representative images per movement)
+──────────────────────────────────────────────────────────────────────
+
+ FILENAME                       WHAT TO USE
+ ─────────────────────────────────────────────────────────────────────
+ renaissance_sample.jpg         The Creation of Adam / Sistine Chapel ceiling detail
+                                → Wikimedia: "Creación_de_Adán_(Miguel_Ángel)"
+
+ baroque_sample.jpg             The Calling of Saint Matthew — Caravaggio (1600)
+                                → Wikimedia: "The_Calling_of_Saint_Matthew-Caravaggo"
+
+ impressionism_sample.jpg       Water Lilies — Claude Monet (any series)
+                                → Wikimedia: "Claude_Monet_-_Water_Lilies"
+
+ surrealism_sample.jpg          The Son of Man — René Magritte (1964)
+                                → Wikimedia: "The_Son_of_Man" (check license)
+                                OR use any freely licensed surrealism photo from Unsplash
+
+ modernism_sample.jpg           Les Demoiselles d'Avignon — Picasso (1907)
+                                → Wikimedia: "Les_Demoiselles_d'Avignon"
+
+ abstract_sample.jpg            No. 61 (Rust and Blue) — Mark Rothko (1953)
+                                → Wikimedia or Los Angeles County Museum of Art open access
+
+ contemporary_sample.jpg        Any freely licensed contemporary artwork from Unsplash
+                                Search: "contemporary art gallery" on Unsplash
+
+ postimpressionism_sample.jpg   Starry Night Over the Rhône — Van Gogh (1888)
+                                → Wikimedia: "Van_Gogh_-_Starry_Night_-_Google_Art_Project"
+                                OR Wheat Field with Crows (also Van Gogh)
+
+──────────────────────────────────────────────────────────────────────
+ TOTAL FILES NEEDED: 14
+──────────────────────────────────────────────────────────────────────
+
+ QUICK DOWNLOAD SOURCES (all public domain or open access):
+  • https://commons.wikimedia.org  — search by painting title
+  • https://www.metmuseum.org/art/collection  — filter "Open Access"
+  • https://unsplash.com  — search "art gallery", "painting", etc.
+  • https://artvee.com  — high-res public domain paintings, direct download
+
+──────────────────────────────────────────────────────────────────────
+ NOTE: If an image is missing, the page gracefully shows a
+ coloured gradient placeholder. Everything still works and looks good —
+ the images are purely additive.
+──────────────────────────────────────────────────────────────────────
